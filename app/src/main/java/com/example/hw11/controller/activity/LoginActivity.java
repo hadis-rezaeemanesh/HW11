@@ -21,6 +21,9 @@ public class LoginActivity extends SingleFragmentActivity {
 
     @Override
     public Fragment createFragment() {
-        return LoginFragment.newInstance();
+        Intent intent = new Intent();
+        String userName = intent.getStringExtra(LoginFragment.EXTRA_USER_NAME);
+        String password = intent.getStringExtra(LoginFragment.EXTRA_PASSWORD);
+        return LoginFragment.newInstance(userName, password);
     }
 }

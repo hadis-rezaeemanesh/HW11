@@ -24,10 +24,15 @@ import java.util.Date;
 public class LoginFragment extends Fragment {
 
     public static final int REQUEST_CODE = 1;
+    public static final String ARG_USER_NAME = "userName";
+    public static final String ARG_PASSWORD = "password";
     private EditText mUserNameLogin;
     private EditText mPasswordLogin;
     private Button mButtonLogin;
     private Button mButtonSignUp;
+
+    public static final String EXTRA_USER_NAME = "userName";
+    public static final String EXTRA_PASSWORD = "password";
 
     private User mUser;
     private String userName;
@@ -37,10 +42,12 @@ public class LoginFragment extends Fragment {
         // Required empty public constructor
     }
 
-    public static LoginFragment newInstance() {
-        LoginFragment fragment = new LoginFragment();
+    public static LoginFragment newInstance(String userName, String password) {
         Bundle args = new Bundle();
+        args.putString(ARG_USER_NAME, userName);
+        args.putString(ARG_PASSWORD, password);
 
+        LoginFragment fragment = new LoginFragment();
         fragment.setArguments(args);
         return fragment;
     }
@@ -69,8 +76,7 @@ public class LoginFragment extends Fragment {
             return;
 
         if (requestCode == REQUEST_CODE) {
-            userName = intent.getStringExtra(SignUpFragment.EXTRA_USER_NAME);
-            password = intent.getStringExtra(SignUpFragment.EXTRA_PASSWORD);
+
 
         }
     }
@@ -95,7 +101,7 @@ public class LoginFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = SignUpActivity.newIntent(getActivity());
-                startActivityForResult(intent, REQUEST_CODE);
+                startActivity(intent);
             }
         });
 

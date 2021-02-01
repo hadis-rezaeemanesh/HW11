@@ -9,6 +9,11 @@
     <color name="white">#FFFFFFFF</color>
 
 
+    <color name="login_pink">#CC8A8A</color>
+    <color name="login_btm_blue">#95DBD9</color>
+    <color name="btn_color">#69c5e5</color>
+
+
     <color name="red_100">#F44336</color>
     <color name="red_300">#3F51B5</color>
     <color name="red_500">#9C27B0</color>

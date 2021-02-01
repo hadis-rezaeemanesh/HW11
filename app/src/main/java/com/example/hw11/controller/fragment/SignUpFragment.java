@@ -22,8 +22,6 @@ import com.example.hw11.model.User;
  * create an instance of this fragment.
  */
 public class SignUpFragment extends Fragment {
-    public static final String EXTRA_USER_NAME = "userName";
-    public static final String EXTRA_PASSWORD = "password";
     private EditText mUsername;
     private EditText mPassword;
     private Button mButtonSignUp;
@@ -74,8 +72,7 @@ public class SignUpFragment extends Fragment {
                 int requestCode = getTargetRequestCode();
                 int resultCode = Activity.RESULT_OK;
                 Intent intent = new Intent();
-                intent.putExtra(EXTRA_USER_NAME, mUsername.getText());
-                intent.putExtra(EXTRA_PASSWORD, mPassword.getText());
+
 
                 fragment.onActivityResult(requestCode, resultCode, intent);
             }
